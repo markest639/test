@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小包的个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #444444;
+            line-height: 1.6;
+        }
+        /* 导航栏 */
+        nav {
+            background: #ffffff;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+        }
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+        nav a {
+            color: #4A90D9;
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        /* 主体容器 */
+        .container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        /* 圆形头像 */
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 3px solid #5B8DEF;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 0.6rem;
+        }
+        .slogan {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        .about {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        .about h2 {
+            color: #4A90D9;
+            margin-bottom: 1rem;
+        }
+        /* 社交图标区域 */
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .social a {
+            color: #5B8DEF;
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        /* 响应式适配手机 */
+        @media(max-width:600px){
+            .nav-container{
+                gap:1.5rem;
+            }
+            h1{
+                font-size:2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home">首页</a>
+            <a href="#about">关于我</a>
+            <a href="#contact">联系我</a>
+        </div>
+    </nav>
+
+    <div class="container" id="home">
+        <!-- 头像占位图 -->
+        <img class="avatar" src="https://picsum.photos/id/1005/200/200" alt="头像">
+        <h1>小包</h1>
+        <p class="slogan">嗨嗨，这里是有趣的XBAOS频道！一起玩耍吧~</p>
+
+        <div class="about" id="about">
+            <h2>关于我</h2>
+            <p>我是小包，热爱探索新鲜事物，喜欢学习新技术，乐于分享自己的想法与日常。对待事情认真耐心，愿意不断尝试与成长。平时喜欢记录生活，和同好交流，保持对世界的好奇心。希望可以在这里认识更多朋友。</p>
+        </div>
+
+        <div class="social" id="contact">
+            <a href="#">📱</a>
+            <a href="#">💬</a>
+            <a href="#">📧</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 XBAOS
+    </footer>
+
+    <script>
+        // 简单平滑滚动JS
+        document.querySelectorAll('nav a').forEach(item=>{
+            item.addEventListener('click',function(e){
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({behavior:'smooth'});
+            })
+        })
+    </script>
+</body>
+</html>
